@@ -4,6 +4,7 @@
     Para acessar o projeto, habilite o Apache no XAMPP
     Abra a URL http://localhost/login/ no navegador
 -->
+
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -12,10 +13,12 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>Sistema de Login</title>
     <style>
-        #alerta, #caixaSenha, #caixaRegistro{
+        #alerta,
+        #caixaSenha,
+        #caixaRegistro {
             display: none;
         }
-        </style>
+    </style>
 </head>
 
 <body class="bg-dark">
@@ -165,6 +168,30 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script>
         //Código jQuery para mostrar e ocultar os formulários
+        $(function() {
+            $("#btnEsqueci").click(function() {
+                $("#caixaLogin").hide(); //Ocultar
+                $("#caixaSenha").show(); //Mostrar
+            });
+
+            $("btnJaRegistrado").click(function() {
+                $("#caixaSenha").hide();//Ocultar
+                $("#caixaLogin").show();//Mostrar
+            })
+
+            $("#btnRegistrarNovo").click(function() {
+                $("#caixaLogin").hide();//Ocultar
+                $("#caixaRegistro").show();//Mostrar
+            });
+
+            $("btnJaRegistrado2").click(function() {
+                $("#caixaLogin").hide();//Ocultar
+                $("#caixaRegistro").show();//Mostrar
+            })
+
+
+
+        });
     </script>
 </body>
 
