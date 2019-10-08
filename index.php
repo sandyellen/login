@@ -163,7 +163,6 @@
             jQuery.validator.setDefaults({
                 success: "valid"
             });
-
             $("#formRegistro").validate({
                 rules: {
                     senhaDoUsuario: "required",
@@ -191,6 +190,61 @@
                 $("#caixaLogin").show(); //Mostrar
                 $("#caixaRegistro").hide(); //Ocultar
             });
+            //Cadastro de novo usuário
+            $("#btnRegistrar").click(function(e) {
+                if (document
+                    .querySelector("#formRegistro")
+                    .checkValidity()) {
+                    e.preventDefault(); //Não abrir outra págin
+                    //Envio dos dados via Ajax
+                    $.ajax({
+                        url: 'recebe_dados.php',
+                        method: 'post',
+                        data: $("#formRegistro").serialize() + '&action=cadastro',
+                        success: function(resposta) {
+                            $("#alerta").show();
+                            $(".resultado").html(resposta);
+                        }
+                    });
+                }
+                return true;
+            });
+            //Login
+            $("#btnEntrar").click(function(e) {});
+            if (document
+                .querySelector("#formLogin")
+                .checkValidity()) {
+                e.preventDefault(); //Não abrir outra págin
+                //Envio dos dados via Ajax
+                $.ajax({
+                    url: 'recebe_dados.php',
+                    method: 'post',
+                    data: $("#formLogin").serialize() + '&action=login',
+                    success: function(resposta) {
+                        $("#alerta").show();
+                        $(".resultado").html(resposta);
+                    }
+                });
+            }
+            return true;
+            //Recuperação de senha
+            $("#btnGerar").click(function(e) {});
+            if (document
+                .querySelector("#formSenha")
+                .checkValidity()) {
+                e.preventDefault(); //Não abrir outra págin
+                //Envio dos dados via Ajax
+                $.ajax({
+                    url: 'recebe_dados.php',
+                    method: 'post',
+                    data: $("#formSenha").serialize() + '&action=senha',
+                    success: function(resposta) {
+                        $("#alerta").show();
+                        $(".resultado").html(resposta);
+                    }
+                });
+            }
+            return true;
         });
         /*
          * Translated default messages for the jQuery validation plugin.
@@ -218,4 +272,4 @@
     </script>
 </body>
 
-</html>
+</html>1Q2
