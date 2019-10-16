@@ -1,6 +1,9 @@
 # login
 Sistema de Login em PHP e Javascript
 
+# aula6 - 15/10/2019
+-Persistencia de dados no banco de dados.
+
 # aula05 - 04/10/2019
 - Envio de dados do front-end para back-end,
   métodos GET e POST.
