@@ -1,8 +1,15 @@
 # login
 Sistema de Login em PHP e Javascript
 
+# aula08 - 21/10/2019
+- Autenticação do usuário e permissão de acesso ao perfil.php
+- Conceito de sessão
+
+# aula07 - 18/10/2019
+- Início da autenticação e entrada no sistema
+
 # aula6 - 15/10/2019
--Persistencia de dados no banco de dados.
+- Persistencia de dados no banco de dados.
 
 # aula05 - 04/10/2019
 - Envio de dados do front-end para back-end,

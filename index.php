@@ -210,41 +210,49 @@
                 return true;
             });
             //Login
-            $("#btnEntrar").click(function(e) {});
-            if (document
-                .querySelector("#formLogin")
-                .checkValidity()) {
-                e.preventDefault(); //Não abrir outra págin
-                //Envio dos dados via Ajax
-                $.ajax({
-                    url: 'recebe_dados.php',
-                    method: 'post',
-                    data: $("#formLogin").serialize() + '&action=login',
-                    success: function(resposta) {
-                        $("#alerta").show();
-                        $(".resultado").html(resposta);
-                    }
-                });
-            }
-            return true;
+            $("#btnEntrar").click(function(e) {
+                if (document
+                    .querySelector("#formLogin")
+                    .checkValidity()) {
+                    e.preventDefault(); //Não abrir outra págin
+                    //Envio dos dados via Ajax
+                    $.ajax({
+                        url: 'recebe_dados.php',
+                        method: 'post',
+                        data: $("#formLogin").serialize() + '&action=login',
+                        success: function(resposta) {
+                            $("#alerta").show();
+                           // $(".resultado").html(resposta);
+                           if(resposta === "ok"){
+                               window.location = "perfil.php";
+
+                           } else{
+                               $(".resultado").html(resposta)
+                           }
+                        }
+                    });
+                }
+                return true;
+            });
             //Recuperação de senha
-            $("#btnGerar").click(function(e) {});
-            if (document
-                .querySelector("#formSenha")
-                .checkValidity()) {
-                e.preventDefault(); //Não abrir outra págin
-                //Envio dos dados via Ajax
-                $.ajax({
-                    url: 'recebe_dados.php',
-                    method: 'post',
-                    data: $("#formSenha").serialize() + '&action=senha',
-                    success: function(resposta) {
-                        $("#alerta").show();
-                        $(".resultado").html(resposta);
-                    }
-                });
-            }
-            return true;
+            $("#btnGerar").click(function(e) {
+                if (document
+                    .querySelector("#formSenha")
+                    .checkValidity()) {
+                    e.preventDefault(); //Não abrir outra págin
+                    //Envio dos dados via Ajax
+                    $.ajax({
+                        url: 'recebe_dados.php',
+                        method: 'post',
+                        data: $("#formSenha").serialize() + '&action=senha',
+                        success: function(resposta) {
+                            $("#alerta").show();
+                            $(".resultado").html(resposta);
+                        }
+                    });
+                }
+                return true;
+            });
         });
         /*
          * Translated default messages for the jQuery validation plugin.
@@ -272,4 +280,4 @@
     </script>
 </body>
 
-</html>1Q2
+</html>
