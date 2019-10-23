@@ -17,6 +17,9 @@ if(isset($_SESSION['nomeDoUsuario'])){
     $email = $linha['emailUsuario'];
     $dataCriado = $linha['dataCriado'];
 
+    //Conversão de data
+    
+
 
 }else{
     //Se não estiver logado, redirecionar para index
